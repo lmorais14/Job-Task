@@ -3,6 +3,13 @@ plugins/**/*
 
 # files directory where uploads go
 files
+name: Deploy sample app
+  hosts: windows_servers
+  roles:
+    - { role: app_deploy, env: development }
+  vars:
+    db_user: dev_user
+    db_password: dev_password
 
 # DBMigrate plugin: generated SQL
 db/sql
